@@ -15,10 +15,12 @@ import { ProjectCard } from "./components/ProjectCard";
 import { SectionHeading } from "./components/SectionHeading";
 import { profile, projects, skillGroups } from "./data/portfolio";
 
-const metrics = [
-  { label: "Foco", value: "Software + Dados" },
-  { label: "Pipeline", value: "Aprendizado prático" },
-  { label: "Postura", value: "Rigor técnico" },
+const currentFocus = [
+  "Software Development",
+  "Dados / Machine Learning",
+  "Segurança da Informação",
+  "Projetos aplicados",
+  "Ciência da Computação na UniSantos",
 ];
 
 function copyEmail() {
@@ -59,24 +61,20 @@ export default function App() {
               </div>
             </div>
 
-            <aside className="telemetry-panel" aria-label="Resumo técnico">
-              <div className="telemetry-header">
-                <span>Telemetry</span>
-                <strong>LIVE</strong>
+            <aside className="focus-card" aria-label="Foco atual">
+              <div className="focus-card__header">
+                <span>Foco atual</span>
+                <strong>Evolução técnica</strong>
               </div>
-              {metrics.map((metric) => (
-                <div className="metric-row" key={metric.label}>
-                  <span>{metric.label}</span>
-                  <strong>{metric.value}</strong>
-                </div>
-              ))}
-              <div className="signal-bars" aria-hidden="true">
-                <span />
-                <span />
-                <span />
-                <span />
-                <span />
-              </div>
+              <ul>
+                {currentFocus.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+              <p>
+                Experiência prática em TI, projetos acadêmicos aplicados e evolução
+                contínua em software, dados e segurança.
+              </p>
             </aside>
           </div>
         </section>
@@ -91,15 +89,16 @@ export default function App() {
             <p>
               Sou estudante de Ciência da Computação na UniSantos e venho desenvolvendo
               uma base prática em desenvolvimento de software, estruturas de dados,
-              Python, C, bancos de dados, automação e segurança da informação. Meu foco
-              atual é evoluir com projetos que exigem organização, documentação e
-              capacidade analítica.
+              Python, C, bancos de dados, automação e segurança da informação. Também
+              venho acumulando experiência prática em ambiente de TI, conectando rotina
+              técnica, organização e resolução de problemas com aprendizado acadêmico.
             </p>
             <p>
               Tenho interesse especial em sistemas reais, machine learning aplicado,
-              análise de dados e segurança. Busco construir projetos com método:
-              entender o problema, estruturar dados, testar hipóteses, validar resultados
-              e melhorar o código de forma incremental.
+              análise de dados, segurança e automação. Uso projetos como forma de
+              construir repertório técnico com método: entender o problema, estruturar
+              dados, testar hipóteses, validar resultados, documentar decisões e melhorar
+              o código de forma incremental.
             </p>
             <div className="focus-grid" aria-label="Áreas de interesse">
               <span><Code2 size={18} /> Software</span>
@@ -177,7 +176,7 @@ export default function App() {
         <section className="contact-band" id="contato">
           <div>
             <span className="eyebrow">Contato</span>
-            <h2>Aberto a oportunidades de estágio e colaboração técnica.</h2>
+            <h2>Aberto a conexões técnicas, projetos e colaboração prática.</h2>
             <p>
               Projetos acadêmicos, desenvolvimento aplicado, dados, automação e evolução
               prática com acompanhamento técnico.

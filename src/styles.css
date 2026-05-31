@@ -12,7 +12,7 @@
   --subtle: #7f8796;
   --orange: rgb(255, 145, 0);
   --red: #ff2d2d;
-  --shadow: rgba(255, 92, 0, 0.28);
+  --shadow: rgba(255, 92, 0, 0.18);
 }
 
 * {
@@ -51,9 +51,9 @@ a {
   position: sticky;
   top: 0;
   z-index: 20;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  justify-content: space-between;
   gap: 1rem;
   padding: 0.9rem clamp(1rem, 4vw, 4rem);
   background: rgba(7, 8, 11, 0.86);
@@ -61,28 +61,15 @@ a {
   backdrop-filter: blur(16px);
 }
 
-.brand,
+.header-balance,
 .header-actions,
 .main-nav {
   display: flex;
   align-items: center;
 }
 
-.brand {
-  gap: 0.7rem;
-  font-weight: 800;
-  letter-spacing: 0;
-}
-
-.brand-mark {
-  display: grid;
-  width: 2.3rem;
-  height: 2.3rem;
-  place-items: center;
-  background: linear-gradient(135deg, var(--orange), var(--red));
-  color: #06070a;
-  font-size: 0.82rem;
-  clip-path: polygon(12% 0, 100% 0, 88% 100%, 0 100%);
+.header-balance {
+  min-height: 2.35rem;
 }
 
 .main-nav {
@@ -100,6 +87,7 @@ a {
 }
 
 .header-actions {
+  justify-self: end;
   gap: 0.45rem;
 }
 
@@ -133,28 +121,57 @@ a {
   position: absolute;
   inset: 0;
   z-index: -2;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 82% 24%, rgba(255, 145, 0, 0.14), transparent 27rem),
+    radial-gradient(circle at 72% 58%, rgba(255, 45, 45, 0.08), transparent 24rem),
+    linear-gradient(112deg, #07080b 0%, #0a0c10 50%, #101217 100%);
+}
+
+.hero-bg::before,
+.hero-bg::after,
+.hero-section::after {
+  position: absolute;
+  content: "";
+  pointer-events: none;
+}
+
+.hero-bg::before {
+  inset: 0;
   background-image:
-    linear-gradient(90deg, rgba(7, 8, 11, 0.94) 0%, rgba(7, 8, 11, 0.76) 42%, rgba(7, 8, 11, 0.24) 100%),
-    url("/hero-performance.png");
-  background-size: cover;
-  background-position: center;
+    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 4.5rem 4.5rem;
+  mask-image: linear-gradient(90deg, transparent 0%, #000 48%, transparent 100%);
+  opacity: 0.42;
+}
+
+.hero-bg::after {
+  right: -6rem;
+  bottom: 9%;
+  width: min(54vw, 42rem);
+  height: min(28vw, 18rem);
+  border-top: 1px solid rgba(255, 145, 0, 0.34);
+  border-bottom: 1px solid rgba(255, 45, 45, 0.18);
+  background:
+    linear-gradient(105deg, transparent 0%, rgba(255, 145, 0, 0.1) 48%, transparent 49%),
+    linear-gradient(105deg, transparent 0%, rgba(255, 255, 255, 0.08) 56%, transparent 57%);
+  transform: skewX(-18deg);
+  opacity: 0.68;
 }
 
 .hero-section::after {
-  position: absolute;
   inset: 0;
   z-index: -1;
-  content: "";
   background:
     repeating-linear-gradient(
       115deg,
       transparent 0,
-      transparent 1.6rem,
-      rgba(255, 255, 255, 0.035) 1.62rem,
-      rgba(255, 255, 255, 0.035) 1.7rem
+      transparent 5.8rem,
+      rgba(255, 145, 0, 0.045) 5.86rem,
+      rgba(255, 145, 0, 0.045) 5.92rem
     ),
     linear-gradient(180deg, transparent 72%, var(--bg));
-  pointer-events: none;
 }
 
 .hero-content {
@@ -280,56 +297,69 @@ h3 {
   border-color: rgba(255, 145, 0, 0.68);
 }
 
-.telemetry-panel {
+.focus-card {
   align-self: end;
-  padding: 1.1rem;
-  border: 1px solid rgba(255, 145, 0, 0.32);
-  background: linear-gradient(180deg, rgba(10, 11, 15, 0.86), rgba(18, 20, 27, 0.72));
-  box-shadow: 0 18px 60px rgba(0, 0, 0, 0.34);
-  clip-path: polygon(0 0, 94% 0, 100% 10%, 100% 100%, 6% 100%, 0 90%);
+  padding: 1.2rem;
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  background:
+    linear-gradient(135deg, rgba(255, 145, 0, 0.075), transparent 48%),
+    rgba(11, 13, 18, 0.78);
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.28);
+  backdrop-filter: blur(14px);
 }
 
-.telemetry-header,
-.metric-row {
+.focus-card__header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-}
-
-.telemetry-header {
-  margin-bottom: 1.25rem;
-  color: var(--subtle);
+  margin-bottom: 1rem;
   font-size: 0.8rem;
+  font-weight: 800;
   text-transform: uppercase;
 }
 
-.telemetry-header strong {
-  color: var(--red);
+.focus-card__header span {
+  color: var(--orange);
 }
 
-.metric-row {
-  padding: 0.8rem 0;
-  border-top: 1px solid var(--line);
-  color: var(--subtle);
-}
-
-.metric-row strong {
+.focus-card__header strong {
   color: var(--text);
-  text-align: right;
+  font-size: 0.72rem;
 }
 
-.signal-bars {
+.focus-card ul {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 0.45rem;
-  margin-top: 1rem;
+  gap: 0.72rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
 }
 
-.signal-bars span {
-  height: 0.45rem;
-  background: linear-gradient(90deg, var(--orange), var(--red));
-  transform: skewX(-22deg);
+.focus-card li {
+  position: relative;
+  padding-left: 1rem;
+  color: var(--text);
+  font-weight: 750;
+}
+
+.focus-card li::before {
+  position: absolute;
+  top: 0.62em;
+  left: 0;
+  width: 0.38rem;
+  height: 0.38rem;
+  background: var(--orange);
+  content: "";
+  transform: rotate(45deg);
+}
+
+.focus-card p {
+  margin: 1.1rem 0 0;
+  padding-top: 1rem;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  line-height: 1.6;
 }
 
 .content-band,
@@ -417,18 +447,6 @@ h3 {
     box-shadow 180ms ease;
 }
 
-.project-card::before {
-  position: absolute;
-  top: 0.8rem;
-  right: -2.4rem;
-  width: 8rem;
-  height: 0.32rem;
-  background: var(--orange);
-  content: "";
-  transform: rotate(-28deg);
-  opacity: 0.72;
-}
-
 .project-card:hover {
   border-color: rgba(255, 145, 0, 0.46);
   box-shadow: 0 18px 54px rgba(0, 0, 0, 0.28);
@@ -458,6 +476,17 @@ h3 {
   height: 2rem;
   place-items: center;
   border: 1px solid rgba(255, 145, 0, 0.36);
+  background: rgba(255, 145, 0, 0.055);
+  transition:
+    background 180ms ease,
+    border-color 180ms ease,
+    transform 180ms ease;
+}
+
+.project-card__topline a:hover {
+  border-color: rgba(255, 145, 0, 0.82);
+  background: rgba(255, 145, 0, 0.14);
+  transform: translateY(-2px);
 }
 
 .project-card__emphasis {
@@ -551,6 +580,15 @@ h3 {
 }
 
 @media (max-width: 920px) {
+  .site-header {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .header-balance {
+    display: none;
+  }
+
   .main-nav {
     display: none;
   }
@@ -567,7 +605,7 @@ h3 {
     grid-template-columns: 1fr;
   }
 
-  .telemetry-panel {
+  .focus-card {
     align-self: stretch;
   }
 
@@ -584,10 +622,6 @@ h3 {
 @media (max-width: 560px) {
   .site-header {
     align-items: flex-start;
-  }
-
-  .brand span:last-child {
-    display: none;
   }
 
   .header-actions a {

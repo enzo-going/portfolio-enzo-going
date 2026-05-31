@@ -40,7 +40,7 @@ Os arquivos finais serão gerados em `dist/`.
 - `src/data/portfolio.ts`: dados editáveis de perfil, projetos e skills.
 - `src/components/`: componentes reutilizáveis.
 - `src/styles.css`: identidade visual, responsividade e estados de interação.
-- `public/hero-performance.png`: imagem hero original gerada para o projeto.
+- O hero usa composição visual em CSS, sem imagem de fundo externa.
 
 ## Publicação
 

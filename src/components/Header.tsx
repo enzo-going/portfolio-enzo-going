@@ -12,10 +12,7 @@ const navItems = [
 export function Header() {
   return (
     <header className="site-header">
-      <a className="brand" href="#topo" aria-label="Ir para o início">
-        <span className="brand-mark">EG</span>
-        <span>Enzo Going</span>
-      </a>
+      <div className="header-balance" aria-hidden="true" />
 
       <nav className="main-nav" aria-label="Navegação principal">
         {navItems.map((item) => (
