@@ -28,9 +28,9 @@ export function Header() {
 
   return (
     <header className={`site-header ${scrolled ? "is-scrolled" : ""}`}>
-      <a className="brand" href="#topo" onClick={() => setMenuOpen(false)}>
-        <span className="brand__mark">EG</span>
-        <span className="brand__name">enzo.going</span>
+      <a className="header-status mono" href="#contato" onClick={() => setMenuOpen(false)}>
+        <span className="header-status__dot" aria-hidden="true" />
+        aberto a oportunidades
       </a>
 
       <nav className="main-nav" aria-label="Navegação principal">
