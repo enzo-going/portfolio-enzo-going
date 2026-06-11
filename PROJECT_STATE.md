@@ -26,12 +26,11 @@
 
 ## Pendências
 
-- [ ] `og:image` com a identidade nova (hoje o Open Graph não tem imagem).
-- [ ] Favicon com monograma "EG" (hoje usa o padrão do Vite/nenhum).
+- [x] `og:image` com a identidade nova (`public/og-image.png`, 1200×630).
+- [x] Favicon com monograma "EG" (`public/favicon-*.png` + apple-touch-icon).
 - [ ] Screenshots reais dos projetos quando houver telas estáveis.
 
 ## Próximos passos sugeridos
 
 1. Atualizar o link do portfólio no perfil do GitHub e LinkedIn.
 2. Ajustar textos que não soarem naturais (tudo em `src/data/portfolio.ts`).
-3. Criar favicon e `og:image` com a identidade nova.
