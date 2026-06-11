@@ -116,7 +116,7 @@ export default function App() {
               index="03"
               eyebrow="skills"
               title="Tecnologias organizadas por área"
-              description="Sem barrinhas de porcentagem: o que está em uso nos projetos e o que está em evolução, dito com honestidade."
+              description="Stack organizada por área — o que sustenta os projetos hoje e o que está em evolução."
             />
           </Reveal>
           <Skills />
