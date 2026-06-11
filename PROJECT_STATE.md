@@ -8,8 +8,8 @@
   responsividade verificada em 1440px e 375px, zero erros de console).
 - Bug crítico de encoding (mojibake em `src/data/portfolio.ts`) corrigido —
   a versão anterior em produção exibia acentos quebrados.
-- Redesign publicado na branch **`redesign-v2`** para revisão via preview da
-  Vercel; a `main` (produção) continua com a versão antiga até a aprovação.
+- **Redesign v2 em produção**: revisado, aprovado e mesclado na `main` em
+  2026-06-11 (PR #1 + ajustes finos de header/skills).
 - Deploy Vercel conectado à `main`: https://portfolio-enzo-going.vercel.app/
 
 ## Principais decisões
@@ -26,17 +26,12 @@
 
 ## Pendências
 
-- [ ] Revisão visual final pelo Enzo (preview da Vercel na branch `redesign-v2`).
-- [ ] Mesclar `redesign-v2` na `main` após aprovação (publica em produção).
-- [ ] Decidir visibilidade do repo (segue público com o design antigo; mudar
-      visibilidade exige rede com acesso à api.github.com — bloqueada no CAMPS).
 - [ ] `og:image` com a identidade nova (hoje o Open Graph não tem imagem).
 - [ ] Favicon com monograma "EG" (hoje usa o padrão do Vite/nenhum).
 - [ ] Screenshots reais dos projetos quando houver telas estáveis.
 
 ## Próximos passos sugeridos
 
-1. Abrir o PR de `redesign-v2` e revisar pela URL de preview da Vercel.
+1. Atualizar o link do portfólio no perfil do GitHub e LinkedIn.
 2. Ajustar textos que não soarem naturais (tudo em `src/data/portfolio.ts`).
-3. Mesclar o PR — a Vercel publica o redesign em produção automaticamente.
-4. Atualizar o link do portfólio no perfil do GitHub e LinkedIn.
+3. Criar favicon e `og:image` com a identidade nova.
