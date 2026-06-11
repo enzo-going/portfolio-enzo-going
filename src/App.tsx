@@ -1,200 +1,143 @@
-import {
-  ArrowRight,
-  Clipboard,
-  Code2,
-  Database,
-  Github,
-  GraduationCap,
-  Linkedin,
-  Mail,
-  ShieldCheck,
-  Workflow,
-} from "lucide-react";
+import { Code2, Database, ShieldCheck, Workflow } from "lucide-react";
+import { Contact } from "./components/Contact";
+import { FeaturedProject } from "./components/FeaturedProject";
+import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";
+import { Hero } from "./components/Hero";
+import { Journey } from "./components/Journey";
+import { Marquee } from "./components/Marquee";
 import { ProjectCard } from "./components/ProjectCard";
+import { Reveal } from "./components/Reveal";
 import { SectionHeading } from "./components/SectionHeading";
-import { profile, projects, skillGroups } from "./data/portfolio";
+import { Skills } from "./components/Skills";
+import { projects } from "./data/portfolio";
 
-const currentFocus = [
-  "Software Development",
-  "Dados / Machine Learning",
-  "Segurança da Informação",
-  "Projetos aplicados",
-  "Ciência da Computação na UniSantos",
+const focusAreas = [
+  { icon: Code2, label: "Software", detail: "POO, arquitetura, testes" },
+  { icon: Database, label: "Dados & ML", detail: "pipelines, validação, EDA" },
+  { icon: ShieldCheck, label: "Segurança", detail: "redes e fundamentos" },
+  { icon: Workflow, label: "Automação", detail: "rotinas e fluxos reais" },
 ];
 
-function copyEmail() {
-  void navigator.clipboard?.writeText(profile.email);
-}
-
 export default function App() {
+  const featured = projects.find((project) => project.featured);
+  const regular = projects.filter((project) => !project.featured && !project.side);
+  const side = projects.filter((project) => project.side);
+
   return (
-    <div className="app-shell" id="topo">
+    <div className="app-shell">
       <Header />
 
       <main>
-        <section className="hero-section" aria-labelledby="hero-title">
-          <div className="hero-bg" aria-hidden="true" />
-          <div className="hero-content">
-            <div className="hero-copy">
-              <span className="eyebrow">Portfolio // tecnologia aplicada</span>
-              <h1 id="hero-title">{profile.name}</h1>
-              <p className="hero-title">{profile.title}</p>
-              <p className="hero-text">
-                Estudante de Ciência da Computação na Universidade Católica de Santos,
-                em evolução prática com projetos de software, dados, machine learning,
-                automação e segurança da informação.
-              </p>
-              <div className="hero-actions">
-                <a className="button button-primary" href="#projetos">
-                  Ver projetos <ArrowRight size={18} />
-                </a>
-                <a className="button button-ghost" href={profile.github} target="_blank" rel="noreferrer">
-                  <Github size={18} /> GitHub
-                </a>
-                <a className="button button-ghost" href={profile.linkedin} target="_blank" rel="noreferrer">
-                  <Linkedin size={18} /> LinkedIn
-                </a>
-                <a className="button button-ghost" href="#contato">
-                  <Mail size={18} /> Contato
-                </a>
-              </div>
-            </div>
+        <Hero />
+        <Marquee />
 
-            <aside className="focus-card" aria-label="Foco atual">
-              <div className="focus-card__header">
-                <span>Foco atual</span>
-                <strong>Evolução técnica</strong>
+        <section className="section" id="sobre">
+          <Reveal>
+            <SectionHeading
+              index="01"
+              eyebrow="sobre"
+              title="Base sólida, construída em projetos reais"
+              description="Perfil em formação com método: entender o problema, estruturar os dados, validar hipóteses, testar e documentar — em vez de só empilhar tecnologia."
+            />
+          </Reveal>
+          <div className="about">
+            <Reveal>
+              <div className="about__text">
+                <p>
+                  Sou estudante de Ciência da Computação na Universidade Católica de
+                  Santos, com base prática em desenvolvimento de software, estruturas
+                  de dados, Python, C, bancos de dados, automação e segurança da
+                  informação — e experiência real em ambiente de TI no CAMPS Santos.
+                </p>
+                <p>
+                  Meu diferencial é tratar cada projeto como engenharia: o pipeline de
+                  ML tem validação temporal para não vazar dados, o sistema de
+                  documentos resolve um fluxo administrativo que existe de verdade e a
+                  refatoração do simulador é protegida por testes.
+                </p>
               </div>
-              <ul>
-                {currentFocus.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
-              <p>
-                Experiência prática em TI, projetos acadêmicos aplicados e evolução
-                contínua em software, dados e segurança.
-              </p>
-            </aside>
-          </div>
-        </section>
-
-        <section className="content-band about-band" id="sobre">
-          <SectionHeading
-            eyebrow="Sobre"
-            title="Construindo base técnica com projetos reais"
-            description="Um perfil em formação, com foco em aprender bem os fundamentos e aplicar esse conhecimento em problemas concretos."
-          />
-          <div className="about-layout">
-            <p>
-              Sou estudante de Ciência da Computação na UniSantos e venho desenvolvendo
-              uma base prática em desenvolvimento de software, estruturas de dados,
-              Python, C, bancos de dados, automação e segurança da informação. Também
-              venho acumulando experiência prática em ambiente de TI, conectando rotina
-              técnica, organização e resolução de problemas com aprendizado acadêmico.
-            </p>
-            <p>
-              Tenho interesse especial em sistemas reais, machine learning aplicado,
-              análise de dados, segurança e automação. Uso projetos como forma de
-              construir repertório técnico com método: entender o problema, estruturar
-              dados, testar hipóteses, validar resultados, documentar decisões e melhorar
-              o código de forma incremental.
-            </p>
-            <div className="focus-grid" aria-label="Áreas de interesse">
-              <span><Code2 size={18} /> Software</span>
-              <span><Database size={18} /> Dados e ML</span>
-              <span><ShieldCheck size={18} /> Segurança</span>
-              <span><Workflow size={18} /> Automação</span>
+            </Reveal>
+            <div className="about__grid" aria-label="Áreas de foco">
+              {focusAreas.map((area, index) => (
+                <Reveal key={area.label} delay={index * 80}>
+                  <div className="focus-tile">
+                    <area.icon size={20} aria-hidden="true" />
+                    <strong>{area.label}</strong>
+                    <span>{area.detail}</span>
+                  </div>
+                </Reveal>
+              ))}
             </div>
           </div>
         </section>
 
-        <section className="content-band" id="projetos">
-          <SectionHeading
-            eyebrow="Projetos"
-            title="Projetos em destaque"
-            description="Trabalhos que mostram evolução em software, dados, documentação técnica e aplicação prática."
-          />
+        <section className="section" id="projetos">
+          <Reveal>
+            <SectionHeading
+              index="02"
+              eyebrow="projetos"
+              title="Projetos com problema, abordagem e resultado"
+              description="Do machine learning aplicado à automação em produção interna — código público, documentado e organizado."
+            />
+          </Reveal>
+
+          {featured ? (
+            <Reveal>
+              <FeaturedProject project={featured} />
+            </Reveal>
+          ) : null}
+
           <div className="project-grid">
-            {projects.map((project) => (
-              <ProjectCard key={project.title} project={project} />
+            {regular.map((project, index) => (
+              <Reveal key={project.id} delay={index * 90}>
+                <ProjectCard project={project} />
+              </Reveal>
             ))}
           </div>
-        </section>
 
-        <section className="content-band skills-band" id="skills">
-          <SectionHeading
-            eyebrow="Skills"
-            title="Tecnologias e fundamentos"
-            description="Organização por áreas para deixar claro onde há prática atual e onde há evolução em andamento."
-          />
-          <div className="skills-grid">
-            {skillGroups.map((group) => (
-              <article className="skill-group" key={group.title}>
-                <h3>{group.title}</h3>
-                <div className="badges">
-                  {group.items.map((item) => (
-                    <span key={item}>{item}</span>
-                  ))}
-                </div>
-              </article>
-            ))}
-          </div>
-        </section>
-
-        <section className="content-band split-band" id="formacao">
-          <div>
-            <SectionHeading eyebrow="Formação" title="Ciência da Computação" />
-            <article className="timeline-item">
-              <GraduationCap size={24} />
-              <div>
-                <h3>Universidade Católica de Santos / UniSantos</h3>
-                <p>
-                  Graduação em andamento, com foco atual em desenvolvimento de software,
-                  dados, segurança da informação e projetos acadêmicos aplicados.
-                </p>
+          {side.length > 0 ? (
+            <div className="side-projects">
+              <p className="side-projects__label mono">+ projetos laterais</p>
+              <div className="project-grid project-grid--side">
+                {side.map((project) => (
+                  <Reveal key={project.id}>
+                    <ProjectCard project={project} />
+                  </Reveal>
+                ))}
               </div>
-            </article>
-          </div>
-
-          <div>
-            <SectionHeading eyebrow="Prática" title="Experiência em ambiente de TI" />
-            <article className="timeline-item">
-              <Clipboard size={24} />
-              <div>
-                <h3>CAMPS Santos</h3>
-                <p>
-                  Experiência prática em ambiente de TI, apoio a rotinas técnicas,
-                  organização de sistemas e documentos, além de automação de processos
-                  quando aplicável.
-                </p>
-              </div>
-            </article>
-          </div>
+            </div>
+          ) : null}
         </section>
 
-        <section className="contact-band" id="contato">
-          <div>
-            <span className="eyebrow">Contato</span>
-            <h2>Aberto a conexões técnicas, projetos e colaboração prática.</h2>
-            <p>
-              Projetos acadêmicos, desenvolvimento aplicado, dados, automação e evolução
-              prática com acompanhamento técnico.
-            </p>
-          </div>
-          <div className="contact-actions">
-            <a className="button button-primary" href={profile.github} target="_blank" rel="noreferrer">
-              <Github size={18} /> GitHub
-            </a>
-            <a className="button button-ghost" href={profile.linkedin} target="_blank" rel="noreferrer">
-              <Linkedin size={18} /> LinkedIn
-            </a>
-            <button className="button button-ghost" type="button" onClick={copyEmail}>
-              <Mail size={18} /> Copiar e-mail
-            </button>
-          </div>
+        <section className="section" id="skills">
+          <Reveal>
+            <SectionHeading
+              index="03"
+              eyebrow="skills"
+              title="Tecnologias organizadas por área"
+              description="Sem barrinhas de porcentagem: o que está em uso nos projetos e o que está em evolução, dito com honestidade."
+            />
+          </Reveal>
+          <Skills />
         </section>
+
+        <section className="section" id="trajetoria">
+          <Reveal>
+            <SectionHeading
+              index="04"
+              eyebrow="trajetória"
+              title="Formação e prática, em paralelo"
+              description="Universidade para os fundamentos, ambiente real de TI para a prática — e projetos conectando os dois."
+            />
+          </Reveal>
+          <Journey />
+        </section>
+
+        <Contact />
       </main>
+
+      <Footer />
     </div>
   );
 }

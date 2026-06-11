@@ -1,20 +1,33 @@
-# Enzo Liutkus Going Portfolio
+# Enzo Liutkus Going — Portfólio
 
-Site de portfólio pessoal profissional para apresentar projetos, habilidades,
-formação e experiência prática em tecnologia.
+Portfólio técnico pessoal: projetos, skills, formação e experiência prática em
+software, dados/machine learning, automação e segurança.
 
-## Objetivo
+> Projeto pessoal de portfólio — o conteúdo descreve a trajetória real de um
+> estudante de Ciência da Computação; nada aqui é experiência ou métrica inventada.
 
-O projeto comunica a evolução de Enzo Liutkus Going como estudante de Ciência da
-Computação, com foco em desenvolvimento de software, dados, machine learning,
-automação, segurança da informação e projetos reais.
+**Deploy:** https://portfolio-enzo-going.vercel.app/
+
+## Como clonar
+
+```bash
+git clone https://github.com/enzo-going/portfolio-enzo-going.git
+cd portfolio-enzo-going
+```
+
+## Identidade visual
+
+- Base escura (`#060709`) com acento laranja `rgb(255, 145, 0)` e detalhes em vermelho.
+- Tipografia: Space Grotesk (display), Inter (texto) e JetBrains Mono (elementos técnicos).
+- Estética inspirada em telemetria/data lab: grids técnicos, labels mono, terminal estilizado.
+- Animações em CSS puro + `IntersectionObserver` (sem bibliotecas de animação).
 
 ## Stack
 
-- React
+- React 19
 - TypeScript
 - Vite
-- CSS global estruturado
+- CSS global estruturado com design tokens (`src/styles.css`)
 - Lucide React para ícones
 
 ## Como rodar localmente
@@ -36,21 +49,35 @@ Os arquivos finais serão gerados em `dist/`.
 
 ## Estrutura principal
 
-- `src/App.tsx`: composição das seções do portfólio.
-- `src/data/portfolio.ts`: dados editáveis de perfil, projetos e skills.
-- `src/components/`: componentes reutilizáveis.
-- `src/styles.css`: identidade visual, responsividade e estados de interação.
-- O hero usa composição visual em CSS, sem imagem de fundo externa.
+- `src/data/portfolio.ts` — todo o conteúdo editável (perfil, projetos, skills, timeline, marquee).
+- `src/App.tsx` — composição das seções.
+- `src/components/Hero.tsx` — hero com terminal estilizado e fundo técnico.
+- `src/components/FeaturedProject.tsx` — card do projeto flagship com visual SVG abstrato.
+- `src/components/ProjectCard.tsx` — cards de projeto com glow que segue o cursor.
+- `src/components/Reveal.tsx` — animação de entrada no scroll via IntersectionObserver.
+- `src/components/Marquee.tsx` — faixa animada de tecnologias.
+- `src/styles.css` — design tokens, identidade visual, responsividade e animações.
 
-## Publicação
+## Como editar o conteúdo
 
-O projeto está pronto para ser publicado em Vercel. Para GitHub Pages, pode ser
-necessário configurar o `base` do Vite caso o site seja servido por um subcaminho
-do tipo `/nome-do-repositorio/`.
+Praticamente todo o texto do site vive em `src/data/portfolio.ts`:
 
-## Personalizações futuras
+- `profile` — nome, headline, resumo e links.
+- `projects` — cada projeto tem `tagline`, `description`, `highlights`, `stack` e flags
+  `featured` (card flagship) e `side` (projeto lateral).
+- `skillGroups` — categorias de skills (sem porcentagens, com `hint` opcional de honestidade).
+- `timeline` — formação e experiência.
+- `marqueeItems` — itens da faixa animada.
 
-- Trocar o e-mail placeholder em `src/data/portfolio.ts`.
-- Ajustar descrições dos projetos conforme cada repositório evoluir.
-- Adicionar métricas reais, certificados ou experiências confirmadas.
+## Acessibilidade e performance
+
+- `prefers-reduced-motion` desativa todas as animações.
+- Navegação mobile completa (menu hambúrguer).
+- Sem dependências de animação ou UI — apenas React + Lucide.
+- SEO: meta description, Open Graph e theme-color em `index.html`.
+
+## Próximas melhorias
+
+- Adicionar imagem Open Graph (og:image) gerada com a identidade do site.
 - Incluir screenshots reais dos projetos quando houver telas estáveis.
+- Adicionar métricas reais e certificados conforme forem conquistados.
