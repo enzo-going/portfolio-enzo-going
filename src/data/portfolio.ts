@@ -65,6 +65,23 @@ export const projects: Project[] = [
     featured: true,
   },
   {
+    id: "ti-chamados",
+    name: "Helpdesk de TI — Chamados via WhatsApp",
+    repo: "ti-chamados-whatsapp",
+    kindLabel: "Backend · Arquitetura",
+    tagline:
+      "Núcleo de um helpdesk de TI que transforma mensagens em chamados — triagem automática, rodízio de atendentes e painel local, com integração de mensagens plugável e testável sem rede.",
+    description:
+      "Foco atual: núcleo de helpdesk que transforma mensagens em chamados organizados — triagem automática por palavras-chave, rodízio entre atendentes ativos, follow-up sem duplicação, idempotência de eventos, persistência SQLite e painel local somente leitura. Python puro, zero dependências.",
+    highlights: [
+      "Domínio isolado das integrações: transporte e armazenamento plugáveis",
+      "Borda da WhatsApp Cloud API (webhook, assinatura HMAC) testável sem rede",
+      "Suíte com 177 testes unittest, do fluxo de chamados ao painel",
+    ],
+    stack: ["Python", "SQLite", "unittest", "Zero dependências"],
+    link: "https://github.com/enzo-going/ti-chamados-whatsapp",
+  },
+  {
     id: "autobattler",
     name: "Tactical Autobattler",
     repo: "battle-simulator-python-poo",
