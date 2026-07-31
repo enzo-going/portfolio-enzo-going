@@ -1,9 +1,14 @@
 # PROJECT_STATE.md
 
-Última atualização: 2026-06-11
+Última atualização: 2026-07-31
 
 ## Estado atual
 
+- **2026-07-31 — seção de projetos atualizada**: adicionados `print-monitor-local`
+  (SNMP, SQLite, dashboard Flask, executável Windows) e `network-folder-search`
+  (PowerShell, índice local somente leitura). O card do autobattler passou a
+  apontar para o repositório próprio `tactical-autobattler-python` em vez do fork
+  `battle-simulator-python-poo`, e a contagem de testes do helpdesk foi corrigida.
 - **Redesign v2 completo e validado localmente** (build TypeScript limpo,
   responsividade verificada em 1440px e 375px, zero erros de console).
 - Bug crítico de encoding (mojibake em `src/data/portfolio.ts`) corrigido —
