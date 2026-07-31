@@ -9,7 +9,8 @@ export type Project = {
   approach?: string;
   highlights: string[];
   stack: string[];
-  link: string;
+  link?: string;
+  linkNote?: string;
   featured?: boolean;
   side?: boolean;
 };
@@ -117,21 +118,21 @@ export const projects: Project[] = [
     link: "https://github.com/enzo-going/tactical-autobattler-python",
   },
   {
-    id: "camps-pdf",
-    name: "CAMPS PDF Manager v2",
-    repo: "campsPdfManager-v2",
+    id: "pdf-document-manager",
+    name: "PDF Document Manager",
+    repo: "pdf-document-manager",
     kindLabel: "Automação · Backend",
     tagline:
       "Sistema de gestão, validação e digitalização de documentos PDF com metadados, aplicado a rotinas reais de organização documental.",
     description:
-      "Projeto nascido de uma necessidade concreta no CAMPS Santos: backend em Flask com upload, validação e metadados para digitalizar e organizar um fluxo administrativo de documentos.",
+      "Projeto nascido de uma necessidade concreta em ambiente corporativo: backend em Flask com autenticação, upload, validação e metadados para digitalizar e organizar um fluxo administrativo de documentos, mais um painel de gestão.",
     highlights: [
       "Uso em contexto administrativo real",
-      "Validação e metadados de documentos",
+      "Autenticação, validação e metadados de documentos",
       "Automação de etapas manuais do fluxo",
     ],
     stack: ["Python", "Flask", "PDF", "Metadados"],
-    link: "https://github.com/enzo-going/campsPdfManager-v2",
+    linkNote: "código em revisão para publicação",
   },
   {
     id: "cesta-basica",

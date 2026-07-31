@@ -25,15 +25,19 @@ export function ProjectCard({ project }: ProjectCardProps) {
     >
       <div className="project-card__top">
         <span className="project-card__kind mono">{project.kindLabel}</span>
-        <a
-          className="project-card__link"
-          href={project.link}
-          target="_blank"
-          rel="noreferrer"
-          aria-label={`Abrir repositório ${project.name} no GitHub`}
-        >
-          <ArrowUpRight size={17} aria-hidden="true" />
-        </a>
+        {project.link ? (
+          <a
+            className="project-card__link"
+            href={project.link}
+            target="_blank"
+            rel="noreferrer"
+            aria-label={`Abrir repositório ${project.name} no GitHub`}
+          >
+            <ArrowUpRight size={17} aria-hidden="true" />
+          </a>
+        ) : project.linkNote ? (
+          <span className="project-card__note mono">{project.linkNote}</span>
+        ) : null}
       </div>
 
       <h3 className="project-card__title">{project.name}</h3>
