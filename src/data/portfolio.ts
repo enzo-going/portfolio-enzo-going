@@ -76,27 +76,45 @@ export const projects: Project[] = [
     highlights: [
       "Domínio isolado das integrações: transporte e armazenamento plugáveis",
       "Borda da WhatsApp Cloud API (webhook, assinatura HMAC) testável sem rede",
-      "Suíte com 177 testes unittest, do fluxo de chamados ao painel",
+      "Suíte com mais de 200 testes unittest, do fluxo de chamados ao painel",
     ],
     stack: ["Python", "SQLite", "unittest", "Zero dependências"],
     link: "https://github.com/enzo-going/ti-chamados-whatsapp",
   },
   {
+    id: "print-monitor",
+    name: "Print Monitor Local",
+    repo: "print-monitor-local",
+    kindLabel: "Automação · Redes",
+    tagline:
+      "Monitor local de impressoras de rede: contadores coletados por SNMP, histórico em SQLite e volume real de impressão por período, com dashboard e executável Windows.",
+    description:
+      "Impressoras de rede expõem um contador acumulado de páginas, não o volume de um mês. A ferramenta coleta leituras periódicas por SNMP, guarda o histórico em SQLite e calcula o volume de cada período pela diferença entre leituras — respondendo quanto cada setor imprimiu de fato.",
+    highlights: [
+      "Coleta SNMP em Python puro, sem dependências nativas",
+      "Cálculo por diferença entre leituras, tratando reinício de contador",
+      "Dashboard Flask com filtros, ranking e exportação CSV",
+      "Descoberta de impressoras na rede e empacotamento Windows com PyInstaller",
+    ],
+    stack: ["Python", "SNMP", "SQLite", "Flask", "PyInstaller"],
+    link: "https://github.com/enzo-going/print-monitor-local",
+  },
+  {
     id: "autobattler",
     name: "Tactical Autobattler",
-    repo: "battle-simulator-python-poo",
+    repo: "tactical-autobattler-python",
     kindLabel: "Software · POO",
     tagline:
-      "Simulador tático de batalha por turnos em Python — projeto acadêmico evoluído para código com arquitetura e testes.",
+      "Simulador tático de batalha por turnos em Python — projeto acadêmico evoluído para um motor de simulação com arquitetura, estratégias automáticas e testes.",
     description:
-      "Refatoração e evolução de um autobattler por turnos: responsabilidades separadas com POO, regras de combate isoladas em módulos, CLI para rodar simulações e testes protegendo o comportamento durante a refatoração.",
+      "Refatoração e evolução de um autobattler por turnos: unidades táticas com linhas de frente e retaguarda, efeitos de combate, estratégias automáticas de bot, torneios round-robin com relatórios em JSON — motor separado da CLI e protegido por testes.",
     highlights: [
-      "POO com separação clara de responsabilidades",
-      "CLI para executar simulações",
-      "Testes garantindo a refatoração",
+      "POO com o motor de batalha separado da camada de saída",
+      "Estratégias automáticas, torneios e relatórios JSON",
+      "Simulações determinísticas por seed, validadas em CI",
     ],
-    stack: ["Python", "POO", "CLI", "Testes"],
-    link: "https://github.com/enzo-going/battle-simulator-python-poo",
+    stack: ["Python", "POO", "CLI", "unittest"],
+    link: "https://github.com/enzo-going/tactical-autobattler-python",
   },
   {
     id: "camps-pdf",
@@ -130,6 +148,23 @@ export const projects: Project[] = [
     ],
     stack: ["Python", "Jupyter", "pandas", "Visualização"],
     link: "https://github.com/enzo-going/analise-cesta-basica-brasil",
+  },
+  {
+    id: "network-folder-search",
+    name: "Network Folder Search",
+    repo: "network-folder-search",
+    kindLabel: "Automação · PowerShell",
+    tagline:
+      "Busca instantânea de arquivos em pastas locais e compartilhamentos de rede, a partir de um catálogo local — estritamente somente leitura.",
+    description:
+      "Varrer um compartilhamento de rede a cada consulta é lento. A ferramenta cataloga os nomes e caminhos uma vez em um índice local e transforma a busca em consulta imediata, sem nunca abrir, mover ou alterar os arquivos catalogados.",
+    highlights: [
+      "Índice local separado da consulta: varre a rede uma vez, busca em segundos",
+      "Busca por várias palavras, tolerante a acentos e maiúsculas",
+      "Caminhos de rede externalizados em configuração não versionada",
+    ],
+    stack: ["PowerShell", "Windows", "CSV", "Somente leitura"],
+    link: "https://github.com/enzo-going/network-folder-search",
   },
   {
     id: "f1-modpack",
@@ -176,13 +211,14 @@ export const skillGroups: SkillGroup[] = [
     hint: "fundamentos em construção",
     items: [
       "Fundamentos de redes",
+      "SNMP e monitoramento de ativos",
       "Segurança da informação",
       "Windows Server / GPO (em aprendizado)",
     ],
   },
   {
     title: "Ferramentas",
-    items: ["Git", "GitHub", "VS Code", "PowerShell"],
+    items: ["Git", "GitHub", "GitHub Actions", "VS Code", "PowerShell"],
   },
 ];
 
@@ -198,6 +234,8 @@ export const marqueeItems = [
   "Jupyter",
   "Git",
   "Vite",
+  "PowerShell",
+  "SNMP",
   "Redes",
   "Segurança",
   "Automação",
