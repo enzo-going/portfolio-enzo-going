@@ -21,6 +21,12 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
+# ferramentas locais de desenvolvimento
+.claude/
+CLAUDE.md
+AGENTS.md
+.mcp.json
+
 # editores e SO
 .vscode/*
 !.vscode/extensions.json
