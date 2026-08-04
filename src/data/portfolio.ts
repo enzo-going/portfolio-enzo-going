@@ -101,6 +101,24 @@ export const projects: Project[] = [
     link: "https://github.com/enzo-going/print-monitor-local",
   },
   {
+    id: "windows-deploy-kit",
+    name: "Windows Deploy Kit",
+    repo: "windows-deploy-kit",
+    kindLabel: "Automação · Windows",
+    tagline:
+      "Pendrive que prepara e restaura máquinas Windows sem acompanhamento — remove o Microsoft 365 de fábrica, instala Office, apps e antivírus, e entra no domínio.",
+    description:
+      "Preparar um notebook novo consumia mais de uma hora de trabalho manual e falhava de um jeito diferente a cada tentativa. O kit reduz isso a um duplo clique: menu único, etapas que retomam de onde pararam e um modo simulação que mostra tudo o que seria feito antes de mudar qualquer coisa na máquina.",
+    highlights: [
+      "PowerShell 5.1 sem dependências: roda offline numa máquina recém-formatada",
+      "Etapas idempotentes — rodar de novo pula o que já deu certo",
+      "Senha de domínio só em memória: nunca em arquivo, log ou linha de comando",
+      "Restauração com dupla trava, delegando o apagamento ao próprio Windows",
+    ],
+    stack: ["PowerShell", "Windows", "Active Directory", "Automação"],
+    link: "https://github.com/enzo-going/windows-deploy-kit",
+  },
+  {
     id: "autobattler",
     name: "Tactical Autobattler",
     repo: "tactical-autobattler-python",
@@ -125,14 +143,15 @@ export const projects: Project[] = [
     tagline:
       "Sistema de gestão, validação e digitalização de documentos PDF com metadados, aplicado a rotinas reais de organização documental.",
     description:
-      "Projeto nascido de uma necessidade concreta em ambiente corporativo: backend em Flask com autenticação, upload, validação e metadados para digitalizar e organizar um fluxo administrativo de documentos, mais um painel de gestão.",
+      "Projeto nascido de uma necessidade concreta em ambiente corporativo: backend em Flask com autenticação, upload, validação e metadados para organizar um fluxo administrativo de documentos, mais um painel de gestão.",
     highlights: [
-      "Uso em contexto administrativo real",
-      "Autenticação, validação e metadados de documentos",
-      "Automação de etapas manuais do fluxo",
+      "Autenticação JWT com papéis (admin, usuário e visualizador)",
+      "Upload, validação e edição dos metadados dos PDFs",
+      "Registro de auditoria das ações e painel de métricas",
+      "Configuração inteiramente por variáveis de ambiente",
     ],
-    stack: ["Python", "Flask", "PDF", "Metadados"],
-    linkNote: "código em revisão para publicação",
+    stack: ["Python", "Flask", "SQLAlchemy", "JWT", "PDF"],
+    link: "https://github.com/enzo-going/pdf-document-manager",
   },
   {
     id: "cesta-basica",
@@ -186,7 +205,7 @@ export const projects: Project[] = [
 export const skillGroups: SkillGroup[] = [
   {
     title: "Linguagens",
-    items: ["Python", "C", "TypeScript / JavaScript", "SQL"],
+    items: ["Python", "C", "TypeScript / JavaScript", "SQL", "PowerShell"],
   },
   {
     title: "Frontend",
@@ -256,7 +275,7 @@ export const timeline: TimelineEntry[] = [
     role: "Experiência prática em TI",
     period: "Atual",
     description:
-      "Rotina técnica de TI: suporte, organização de sistemas e documentos e automação de processos — contexto que originou o CAMPS PDF Manager v2.",
+      "Rotina técnica de TI: suporte, organização de sistemas e documentos e automação de processos — contexto que originou o PDF Document Manager e o Windows Deploy Kit.",
     tags: ["Suporte técnico", "Automação", "Fluxo administrativo"],
   },
   {
