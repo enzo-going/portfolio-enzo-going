@@ -1,5 +1,7 @@
 # Enzo Liutkus Going — Portfólio
 
+[![build](https://github.com/enzo-going/portfolio-enzo-going/actions/workflows/build.yml/badge.svg)](https://github.com/enzo-going/portfolio-enzo-going/actions/workflows/build.yml)
+
 Portfólio técnico pessoal: projetos, skills, formação e experiência prática em
 software, dados/machine learning, automação e segurança.
 
