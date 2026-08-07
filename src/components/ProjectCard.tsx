@@ -1,5 +1,5 @@
 import { useRef, type MouseEvent } from "react";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Play } from "lucide-react";
 import type { Project } from "../data/portfolio";
 
 type ProjectCardProps = {
@@ -55,6 +55,18 @@ export function ProjectCard({ project }: ProjectCardProps) {
           <span key={tech}>{tech}</span>
         ))}
       </div>
+
+      {project.demo ? (
+        <a
+          className="project-card__demo mono"
+          href={project.demo.href}
+          target="_blank"
+          rel="noreferrer"
+        >
+          <Play size={13} aria-hidden="true" />
+          {project.demo.label}
+        </a>
+      ) : null}
     </article>
   );
 }

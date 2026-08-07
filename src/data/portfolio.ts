@@ -11,6 +11,7 @@ export type Project = {
   stack: string[];
   link?: string;
   linkNote?: string;
+  demo?: { href: string; label: string };
   featured?: boolean;
   side?: boolean;
 };
@@ -131,9 +132,14 @@ export const projects: Project[] = [
       "POO com o motor de batalha separado da camada de saída",
       "Estratégias automáticas, torneios e relatórios JSON",
       "Simulações determinísticas por seed, validadas em CI",
+      "Jogável no navegador: o mesmo pacote Python rodando via Pyodide, sem servidor",
     ],
-    stack: ["Python", "POO", "CLI", "unittest"],
+    stack: ["Python", "POO", "CLI", "unittest", "Pyodide"],
     link: "https://github.com/enzo-going/tactical-autobattler-python",
+    demo: {
+      href: "https://enzo-going.github.io/tactical-autobattler-python/",
+      label: "Testar no navegador",
+    },
   },
   {
     id: "pdf-document-manager",
