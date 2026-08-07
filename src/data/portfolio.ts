@@ -149,8 +149,9 @@ export const projects: Project[] = [
       "Upload, validação e edição dos metadados dos PDFs",
       "Registro de auditoria das ações e painel de métricas",
       "Configuração inteiramente por variáveis de ambiente",
+      "Suíte de testes da API rodando em CI nas versões 3.11 a 3.13 do Python",
     ],
-    stack: ["Python", "Flask", "SQLAlchemy", "JWT", "PDF"],
+    stack: ["Python", "Flask", "SQLAlchemy", "JWT", "pytest", "PDF"],
     link: "https://github.com/enzo-going/pdf-document-manager",
   },
   {
