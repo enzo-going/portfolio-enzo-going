@@ -1224,6 +1224,30 @@ h3 {
   margin-top: auto;
 }
 
+.project-card__demo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  align-self: flex-start;
+  margin-top: 1rem;
+  padding: 0.45rem 0.85rem;
+  border: 1px solid var(--accent-dim);
+  border-radius: var(--radius);
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition:
+    border-color 200ms var(--ease),
+    transform 200ms var(--ease);
+}
+
+.project-card__demo:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
 .project-card--side {
   background: rgba(12, 14, 19, 0.6);
 }
