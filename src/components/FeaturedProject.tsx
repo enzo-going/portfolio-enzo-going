@@ -1,4 +1,4 @@
-import { ArrowUpRight, Github } from "lucide-react";
+import { ArrowUpRight, Github, Play } from "lucide-react";
 import type { Project } from "../data/portfolio";
 
 type FeaturedProjectProps = {
@@ -87,10 +87,18 @@ export function FeaturedProject({ project }: FeaturedProjectProps) {
               <span key={tech}>{tech}</span>
             ))}
           </div>
-          <a className="button button--primary" href={project.link} target="_blank" rel="noreferrer">
-            <Github size={17} aria-hidden="true" /> Ver repositório
-            <ArrowUpRight size={15} aria-hidden="true" />
-          </a>
+          <div className="featured__actions">
+            {project.demo ? (
+              <a className="button button--ghost" href={project.demo.href} target="_blank" rel="noreferrer">
+                <Play size={16} aria-hidden="true" /> {project.demo.label}
+                <ArrowUpRight size={15} aria-hidden="true" />
+              </a>
+            ) : null}
+            <a className="button button--primary" href={project.link} target="_blank" rel="noreferrer">
+              <Github size={17} aria-hidden="true" /> Ver repositório
+              <ArrowUpRight size={15} aria-hidden="true" />
+            </a>
+          </div>
         </div>
       </div>
 
