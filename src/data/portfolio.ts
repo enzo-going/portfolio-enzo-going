@@ -64,6 +64,10 @@ export const projects: Project[] = [
     ],
     stack: ["Python", "pandas", "scikit-learn", "Jupyter", "Dashboard"],
     link: "https://github.com/enzo-going/international-conflict-risk-ml",
+    demo: {
+      href: "https://enzo-going.github.io/international-conflict-risk-ml/",
+      label: "Ver dashboard",
+    },
     featured: true,
   },
   {
@@ -172,9 +176,14 @@ export const projects: Project[] = [
     highlights: [
       "Séries históricas e análise exploratória",
       "Visualizações com interpretação socioeconômica",
+      "CI reprocessa os dados brutos e falha se os CSVs versionados divergirem",
     ],
     stack: ["Python", "Jupyter", "pandas", "Visualização"],
     link: "https://github.com/enzo-going/analise-cesta-basica-brasil",
+    demo: {
+      href: "https://enzo-going.github.io/analise-cesta-basica-brasil/",
+      label: "Ver dashboard",
+    },
   },
   {
     id: "network-folder-search",
