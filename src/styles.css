@@ -1136,12 +1136,12 @@ h3 {
 .project-card__top {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   gap: 0.8rem;
   margin-bottom: 1.1rem;
 }
 
 .project-card__kind {
+  margin-right: auto;
   color: var(--accent);
   font-size: 0.68rem;
   letter-spacing: 0.12em;
