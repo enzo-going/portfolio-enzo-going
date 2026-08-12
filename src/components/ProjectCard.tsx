@@ -25,6 +25,11 @@ export function ProjectCard({ project }: ProjectCardProps) {
     >
       <div className="project-card__top">
         <span className="project-card__kind mono">{project.kindLabel}</span>
+        {/* O selo acompanha o link quando existem os dois: um projeto publicado
+            ainda pode estar em construção. */}
+        {project.linkNote ? (
+          <span className="project-card__note mono">{project.linkNote}</span>
+        ) : null}
         {project.link ? (
           <a
             className="project-card__link"
@@ -35,8 +40,6 @@ export function ProjectCard({ project }: ProjectCardProps) {
           >
             <ArrowUpRight size={17} aria-hidden="true" />
           </a>
-        ) : project.linkNote ? (
-          <span className="project-card__note mono">{project.linkNote}</span>
         ) : null}
       </div>
 

@@ -71,6 +71,25 @@ export const projects: Project[] = [
     featured: true,
   },
   {
+    id: "netpulse",
+    name: "NetPulse",
+    repo: "netpulse",
+    kindLabel: "Backend · Redes",
+    tagline:
+      "Monitoramento de ativos de rede que agrupa falhas simultâneas em um único incidente, em vez de disparar um alerta por equipamento.",
+    description:
+      "Um monitor comum trata cada host como problema isolado: quando o uplink de uma filial cai, ele enterra o operador em ruído. O NetPulse agrupa falhas simultâneas da mesma sub-rede em um incidente só. Núcleo de coleta e API prontos e testados; o dashboard e a análise de causa assistida por IA são as próximas etapas.",
+    highlights: [
+      "Correlação de falhas por sub-rede: um incidente no lugar de N alertas",
+      "API FastAPI com documentação gerada do próprio código",
+      "Estado do ativo é o pior dos seus checks, não uma média otimista",
+      "Modo demo com parque sintético: roda sem tocar em nenhuma rede real",
+    ],
+    stack: ["Python", "FastAPI", "SQLite", "pytest", "ruff"],
+    link: "https://github.com/enzo-going/netpulse",
+    linkNote: "em construção",
+  },
+  {
     id: "ti-chamados",
     name: "Helpdesk de TI — Chamados via WhatsApp",
     repo: "ti-chamados-whatsapp",
