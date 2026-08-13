@@ -90,6 +90,24 @@ export const projects: Project[] = [
     linkNote: "em construção",
   },
   {
+    id: "corptv",
+    name: "CorporTV",
+    repo: "corptv",
+    kindLabel: "Backend · Digital Signage",
+    tagline:
+      "Plataforma de TV corporativa para distribuir, agendar e acompanhar conteúdo em TV Boxes por meio de playlists centralizadas.",
+    description:
+      "Sistema em produção para administrar TVs distribuídas em um ambiente corporativo. Um painel organiza slides, mídias, grupos e telas; o player recebe alterações automaticamente, mantém cache offline com validade e respeita janelas de agendamento que podem atravessar a meia-noite.",
+    highlights: [
+      "Agendamento por período, dia da semana e horário, inclusive virando a noite",
+      "Player resiliente: atualização sem reinício, heartbeat e cache offline com expiração",
+      "Upload validado por extensão, MIME e assinatura binária do arquivo",
+      "API e regras críticas cobertas por testes automatizados em Node.js 22 e 24",
+    ],
+    stack: ["Node.js", "Express", "JavaScript", "NeDB", "TV Box"],
+    link: "https://github.com/enzo-going/corptv",
+  },
+  {
     id: "ti-chamados",
     name: "Helpdesk de TI — Chamados via WhatsApp",
     repo: "ti-chamados-whatsapp",
@@ -259,7 +277,7 @@ export const skillGroups: SkillGroup[] = [
   },
   {
     title: "Backend & Automação",
-    items: ["Flask", "APIs", "Scripts Python", "Automação de rotinas"],
+    items: ["Node.js / Express", "Flask", "APIs", "Scripts Python", "Automação de rotinas"],
   },
   {
     title: "Redes & Segurança",
@@ -286,6 +304,8 @@ export const marqueeItems = [
   "scikit-learn",
   "SQL",
   "Flask",
+  "Node.js",
+  "Express",
   "Jupyter",
   "Git",
   "Vite",
@@ -310,8 +330,8 @@ export const timeline: TimelineEntry[] = [
     role: "Experiência prática em TI",
     period: "Atual",
     description:
-      "Rotina técnica de TI: suporte, organização de sistemas e documentos e automação de processos — contexto que originou o PDF Document Manager e o Windows Deploy Kit.",
-    tags: ["Suporte técnico", "Automação", "Fluxo administrativo"],
+      "Rotina técnica de TI: suporte, organização de sistemas e documentos e automação de processos — contexto que originou o CorporTV, o PDF Document Manager e o Windows Deploy Kit.",
+    tags: ["Suporte técnico", "Automação", "Sistemas internos"],
   },
   {
     org: "Projetos aplicados",

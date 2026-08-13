@@ -1,9 +1,12 @@
 # PROJECT_STATE.md
 
-Última atualização: 2026-07-31
+Última atualização: 2026-08-13
 
 ## Estado atual
 
+- **2026-08-13 — CorporTV adicionado**: novo card de projeto aplicado, com
+  agendamento, resiliência offline, segurança de uploads e testes em CI. Node.js
+  e Express também foram incluídos nas competências e na faixa de tecnologias.
 - **2026-07-31 — seção de projetos atualizada**: adicionados `print-monitor-local`
   (SNMP, SQLite, dashboard Flask, executável Windows) e `network-folder-search`
   (PowerShell, índice local somente leitura). O card do autobattler passou a
@@ -33,7 +36,8 @@
 
 - [x] `og:image` com a identidade nova (`public/og-image.png`, 1200×630).
 - [x] Favicon com monograma "EG" (`public/favicon-*.png` + apple-touch-icon).
-- [ ] Screenshots reais dos projetos quando houver telas estáveis.
+- [x] Primeiro screenshot real de projeto publicado no README do CorporTV.
+- [ ] Incorporar screenshots reais nos cards do portfólio quando o componente suportar mídia.
 
 ## Próximos passos sugeridos
 
