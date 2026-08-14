@@ -113,12 +113,13 @@ export const projects: Project[] = [
     repo: "ti-chamados-whatsapp",
     kindLabel: "Backend · Arquitetura",
     tagline:
-      "Núcleo de um helpdesk de TI que transforma mensagens em chamados — triagem automática, rodízio de atendentes e painel local, com integração de mensagens plugável e testável sem rede.",
+      "Helpdesk de TI que transforma mensagens de WhatsApp em chamados — triagem automática, rodízio de atendentes e um app Windows para rodar a demonstração com um clique.",
     description:
-      "Foco atual: núcleo de helpdesk que transforma mensagens em chamados organizados — triagem automática por palavras-chave, rodízio entre atendentes ativos, follow-up sem duplicação, idempotência de eventos, persistência SQLite e painel local somente leitura. Python puro, zero dependências.",
+      "Núcleo de helpdesk que transforma mensagens em chamados organizados — triagem automática por palavras-chave, rodízio entre atendentes ativos, follow-up sem duplicação, idempotência de eventos, persistência SQLite e painel local somente leitura. Um app de desktop empacota tudo isso num atalho, sem exigir Python instalado. Python puro, zero dependências de runtime.",
     highlights: [
       "Domínio isolado das integrações: transporte e armazenamento plugáveis",
       "Borda da WhatsApp Cloud API (webhook, assinatura HMAC) testável sem rede",
+      "App Windows empacotado (PyInstaller): atalho na área de trabalho, sem instalar Python",
       "Suíte com mais de 200 testes unittest, do fluxo de chamados ao painel",
     ],
     stack: ["Python", "SQLite", "unittest", "Zero dependências"],
