@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Github, Linkedin, Mail, Menu, X } from "lucide-react";
 import { profile } from "../data/portfolio";
 
@@ -13,6 +13,7 @@ const navItems = [
 export function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -24,6 +25,19 @@ export function Header() {
   useEffect(() => {
     document.body.classList.toggle("menu-open", menuOpen);
     return () => document.body.classList.remove("menu-open");
+  }, [menuOpen]);
+
+  useEffect(() => {
+    if (!menuOpen) return;
+
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key !== "Escape") return;
+      setMenuOpen(false);
+      window.requestAnimationFrame(() => menuButtonRef.current?.focus());
+    };
+
+    document.addEventListener("keydown", onKeyDown);
+    return () => document.removeEventListener("keydown", onKeyDown);
   }, [menuOpen]);
 
   return (
@@ -53,9 +67,11 @@ export function Header() {
           <Mail size={17} />
         </a>
         <button
+          ref={menuButtonRef}
           className="menu-toggle"
           type="button"
           aria-expanded={menuOpen}
+          aria-controls="mobile-navigation"
           aria-label={menuOpen ? "Fechar menu" : "Abrir menu"}
           onClick={() => setMenuOpen((open) => !open)}
         >
@@ -63,7 +79,11 @@ export function Header() {
         </button>
       </div>
 
-      <div className={`mobile-nav ${menuOpen ? "is-open" : ""}`}>
+      <div
+        id="mobile-navigation"
+        className={`mobile-nav ${menuOpen ? "is-open" : ""}`}
+        aria-hidden={!menuOpen}
+      >
         <nav aria-label="Navegação móvel">
           {navItems.map((item) => (
             <a key={item.href} href={item.href} onClick={() => setMenuOpen(false)}>
