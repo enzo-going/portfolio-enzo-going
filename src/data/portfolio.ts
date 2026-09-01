@@ -169,18 +169,19 @@ export const projects: Project[] = [
     tagline:
       "Simulador tático de batalha por turnos em Python — projeto acadêmico evoluído para um motor de simulação com arquitetura, estratégias automáticas e testes.",
     description:
-      "Refatoração e evolução de um autobattler por turnos: unidades táticas com linhas de frente e retaguarda, efeitos de combate, estratégias automáticas de bot, torneios round-robin com relatórios em JSON — motor separado da CLI e protegido por testes.",
+      "Refatoração e evolução de um autobattler por turnos: unidades táticas com linhas de frente e retaguarda, efeitos de combate, estratégias automáticas de bot, torneios round-robin com relatórios em JSON — motor separado da CLI e protegido por testes, com uma arena web que reencena a batalha rodada a rodada a partir dos eventos do próprio motor.",
     highlights: [
       "POO com o motor de batalha separado da camada de saída",
       "Estratégias automáticas, torneios e relatórios JSON",
       "Simulações determinísticas por seed, validadas em CI",
-      "Jogável no navegador: o mesmo pacote Python rodando via Pyodide, sem servidor",
+      "Arena no navegador: o mesmo pacote Python rodando via Pyodide, sem servidor",
+      "Replay animado com linha do tempo, controle de velocidade e tela de desfecho",
     ],
-    stack: ["Python", "POO", "CLI", "unittest", "Pyodide"],
+    stack: ["Python", "POO", "CLI", "unittest", "Pyodide", "JavaScript"],
     link: "https://github.com/enzo-going/tactical-autobattler-python",
     demo: {
       href: "https://enzo-going.github.io/tactical-autobattler-python/",
-      label: "Testar no navegador",
+      label: "Ver a arena",
     },
   },
   {
