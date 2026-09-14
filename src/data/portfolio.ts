@@ -174,6 +174,7 @@ export const projects: Project[] = [
       "POO com o motor de batalha separado da camada de saída",
       "Estratégias automáticas, torneios e relatórios JSON",
       "Simulações determinísticas por seed, validadas em CI",
+      "Viés de iniciativa medido e corrigido: vantagem de quem age primeiro caiu de 55 para 9 pontos em 3.200 batalhas",
       "Arena no navegador: o mesmo pacote Python rodando via Pyodide, sem servidor",
       "Replay animado com linha do tempo, controle de velocidade e tela de desfecho",
     ],
