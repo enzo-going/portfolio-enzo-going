@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
-import { Check, Copy, Github, Linkedin, Mail } from "lucide-react";
+import { Check, Copy, Mail } from "lucide-react";
+import { Github, Linkedin } from "./BrandIcons";
 import { profile } from "../data/portfolio";
 import { Reveal } from "./Reveal";
 
