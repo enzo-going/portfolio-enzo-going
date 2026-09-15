@@ -1,4 +1,5 @@
-import { ArrowUpRight, Github, Play } from "lucide-react";
+import { ArrowUpRight, Play } from "lucide-react";
+import { Github } from "./BrandIcons";
 import type { Project } from "../data/portfolio";
 
 type FeaturedProjectProps = {
