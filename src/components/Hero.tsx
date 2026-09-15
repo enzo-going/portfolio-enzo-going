@@ -1,4 +1,5 @@
-import { ArrowDownRight, ArrowRight, Github, Linkedin, Mail } from "lucide-react";
+import { ArrowDownRight, ArrowRight, Mail } from "lucide-react";
+import { Github, Linkedin } from "./BrandIcons";
 import { profile } from "../data/portfolio";
 
 type TerminalLine = {
