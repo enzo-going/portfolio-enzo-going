@@ -167,22 +167,22 @@ export const projects: Project[] = [
     repo: "tactical-autobattler-python",
     kindLabel: "Software · POO",
     tagline:
-      "Simulador tático de batalha por turnos em Python — projeto acadêmico evoluído para um motor de simulação com arquitetura, estratégias automáticas e testes.",
+      "Jogo tático por turnos em Python, jogável no navegador — recrute o esquadrão, dê uma ordem por unidade e abra caminho até o forte rival.",
     description:
-      "Refatoração e evolução de um autobattler por turnos: unidades táticas com linhas de frente e retaguarda, efeitos de combate, estratégias automáticas de bot, torneios round-robin com relatórios em JSON — motor separado da CLI e protegido por testes, com uma arena web que reencena a batalha rodada a rodada a partir dos eventos do próprio motor.",
+      "Projeto acadêmico de POO que virou jogo: a partida existe como uma sessão em Python que valida cada comando — recrutar, atacar, proteger, curar, reposicionar — e espera a próxima decisão, sem cronômetro. O mesmo pacote roda no navegador via Pyodide, sem servidor. O laboratório anterior continua ao lado: estratégias automáticas de bot, torneios round-robin e relatórios em JSON, com o motor separado da interface e protegido por testes.",
     highlights: [
-      "POO com o motor de batalha separado da camada de saída",
-      "Estratégias automáticas, torneios e relatórios JSON",
-      "Simulações determinísticas por seed, validadas em CI",
+      "Partida por turnos: uma ação por unidade, alvo confirmado e resposta do rival",
+      "O mesmo pacote Python jogando no navegador via Pyodide, sem servidor",
+      "POO com o motor de batalha separado da interface e da CLI",
+      "Laboratório preservado: estratégias automáticas, torneios e relatórios JSON",
       "Viés de iniciativa medido e corrigido: vantagem de quem age primeiro caiu de 55 para 9 pontos em 3.200 batalhas",
-      "Arena no navegador: o mesmo pacote Python rodando via Pyodide, sem servidor",
-      "Replay animado com linha do tempo, controle de velocidade e tela de desfecho",
+      "57 testes em CI, que instalam o pacote e o exercitam em duas versões de Python",
     ],
     stack: ["Python", "POO", "CLI", "unittest", "Pyodide", "JavaScript"],
     link: "https://github.com/enzo-going/tactical-autobattler-python",
     demo: {
       href: "https://enzo-going.github.io/tactical-autobattler-python/",
-      label: "Ver a arena",
+      label: "Jogar no navegador",
     },
   },
   {
