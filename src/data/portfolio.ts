@@ -78,16 +78,15 @@ export const projects: Project[] = [
     tagline:
       "Monitoramento de ativos de rede que agrupa falhas simultâneas em um único incidente, em vez de disparar um alerta por equipamento.",
     description:
-      "Um monitor comum trata cada host como problema isolado: quando o uplink de uma filial cai, ele enterra o operador em ruído. O NetPulse agrupa falhas simultâneas da mesma sub-rede em um incidente só. Núcleo de coleta e API prontos e testados; o dashboard e a análise de causa assistida por IA são as próximas etapas.",
+      "Um monitor comum trata cada host como problema isolado: quando o uplink de uma filial cai, ele enterra o operador em ruído. O NetPulse agrupa falhas simultâneas da mesma sub-rede em um incidente só. O marco v0.1 está completo: coleta, API, dashboard, histórico e motor de incidentes testados, com análise de causa por IA opcional, feita só quando o operador pede.",
     highlights: [
       "Correlação de falhas por sub-rede: um incidente no lugar de N alertas",
-      "API FastAPI com documentação gerada do próprio código",
+      "Dashboard React com linha do tempo de incidentes e histórico por ativo",
       "Estado do ativo é o pior dos seus checks, não uma média otimista",
-      "Modo demo com parque sintético: roda sem tocar em nenhuma rede real",
+      "Demo completa em um `docker compose up`, sem tocar em nenhuma rede real",
     ],
-    stack: ["Python", "FastAPI", "SQLite", "pytest", "ruff"],
+    stack: ["Python", "FastAPI", "React", "SQLite", "Docker", "pytest"],
     link: "https://github.com/enzo-going/netpulse",
-    linkNote: "em construção",
   },
   {
     id: "corptv",
