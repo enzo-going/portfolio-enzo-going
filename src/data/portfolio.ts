@@ -158,7 +158,7 @@ export const projects: Project[] = [
       "Restauração com dupla trava, delegando o apagamento ao próprio Windows",
     ],
     stack: ["PowerShell", "Windows", "Active Directory", "Automação"],
-    link: "https://github.com/enzo-going/windows-deploy-kit",
+    linkNote: "repositório privado",
   },
   {
     id: "autobattler",
