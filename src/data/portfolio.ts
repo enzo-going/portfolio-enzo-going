@@ -117,7 +117,7 @@ export const projects: Project[] = [
       "Raspberry preparada com o mesmo comando para todas; a tela de cada uma se escolhe no painel",
       "Agendamento por período, dia e horário, inclusive virando a noite, respeitado também offline",
       "Perfis TI/editor/leitura, auditoria verificável e monitor de tráfego minuto a minuto",
-      "223 testes automatizados em CI com Node.js 22 e 24",
+      "225 testes automatizados em CI com Node.js 22 e 24",
     ],
     stack: ["Node.js", "Express", "JavaScript", "NeDB", "Raspberry Pi", "ffmpeg"],
     link: "https://github.com/enzo-going/corptv",
