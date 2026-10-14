@@ -175,7 +175,7 @@ export const projects: Project[] = [
       "POO com o motor de batalha separado da interface e da CLI",
       "Laboratório preservado: estratégias automáticas, torneios e relatórios JSON",
       "Viés de iniciativa medido e corrigido: vantagem de quem age primeiro caiu de 55 para 9 pontos em 3.200 batalhas",
-      "57 testes em CI, que instalam o pacote e o exercitam em duas versões de Python",
+      "105 testes em CI, que instalam o pacote e o exercitam em duas versões de Python",
     ],
     stack: ["Python", "POO", "CLI", "unittest", "Pyodide", "JavaScript"],
     link: "https://github.com/enzo-going/tactical-autobattler-python",
