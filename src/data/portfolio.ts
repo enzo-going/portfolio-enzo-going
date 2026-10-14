@@ -94,16 +94,18 @@ export const projects: Project[] = [
     repo: "corptv",
     kindLabel: "Backend · Digital Signage",
     tagline:
-      "Plataforma de TV corporativa para distribuir, agendar e acompanhar conteúdo em TV Boxes por meio de playlists centralizadas.",
+      "Plataforma de TV corporativa: um painel central publica e agenda o conteúdo, e um agente na Raspberry Pi atrás da TV exibe tudo do disco local, sem depender da rede.",
     description:
-      "Sistema em produção para administrar TVs distribuídas em um ambiente corporativo. Um painel organiza slides, mídias, grupos e telas; o player recebe alterações automaticamente, mantém cache offline com validade e respeita janelas de agendamento que podem atravessar a meia-noite.",
+      "Sistema em produção em um ambiente corporativo. Tocando direto do servidor, quatro TVs ocupavam 11,6 Mb/s o dia inteiro, no limite do QoS da rede. Com o agente na Raspberry, cada vídeo é baixado uma vez, conferido e exibido do disco: o tráfego medido caiu para cerca de 106 KB por hora. Como quem publica não é do TI, o servidor converte sozinho o vídeo que chega fora do padrão, e a Pi se prepara com um único comando e recebe a tela pelo painel.",
     highlights: [
-      "Agendamento por período, dia da semana e horário, inclusive virando a noite",
-      "Player resiliente: atualização sem reinício, heartbeat e cache offline com expiração",
-      "Upload validado por extensão, MIME e assinatura binária do arquivo",
-      "API e regras críticas cobertas por testes automatizados em Node.js 22 e 24",
+      "Agente offline: de 11,6 Mb/s permanentes para ~106 KB por hora com quatro TVs",
+      "Vídeo convertido no servidor com ffmpeg antes de ir ao ar; download conferido por SHA-256",
+      "Raspberry preparada com o mesmo comando para todas; a tela de cada uma se escolhe no painel",
+      "Agendamento por período, dia e horário, inclusive virando a noite, respeitado também offline",
+      "Perfis TI/editor/leitura, auditoria verificável e monitor de tráfego minuto a minuto",
+      "223 testes automatizados em CI com Node.js 22 e 24",
     ],
-    stack: ["Node.js", "Express", "JavaScript", "NeDB", "TV Box"],
+    stack: ["Node.js", "Express", "JavaScript", "NeDB", "Raspberry Pi", "ffmpeg"],
     link: "https://github.com/enzo-going/corptv",
   },
   {
