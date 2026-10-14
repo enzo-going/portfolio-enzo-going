@@ -23,6 +23,19 @@ export function ProjectCard({ project }: ProjectCardProps) {
       className={`project-card ${project.side ? "project-card--side" : ""}`}
       onMouseMove={handleMouseMove}
     >
+      {project.image ? (
+        <figure className="project-card__media">
+          <img
+            src={project.image.src}
+            alt={project.image.alt}
+            width={960}
+            height={600}
+            loading="lazy"
+            decoding="async"
+          />
+        </figure>
+      ) : null}
+
       <div className="project-card__top">
         <span className="project-card__kind mono">{project.kindLabel}</span>
         {/* O selo acompanha o link quando existem os dois: um projeto publicado

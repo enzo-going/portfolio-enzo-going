@@ -1040,35 +1040,33 @@ h3 {
     var(--bg-soft);
 }
 
-.featured__svg {
+.featured__shot {
+  display: block;
   width: 100%;
-  max-width: 22rem;
+  max-width: 26rem;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid var(--line-strong);
+  border-radius: 6px;
+  background: var(--panel);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+  transition:
+    border-color 240ms var(--ease),
+    transform 240ms var(--ease);
+}
+
+.featured__shot:hover {
+  border-color: var(--accent-line);
+  transform: translateY(-3px);
+}
+
+.featured__shot img {
+  display: block;
+  width: 100%;
   height: auto;
-}
-
-.featured__cell {
-  fill: var(--accent);
-  animation: cell-pulse 4.5s ease-in-out infinite alternate;
-}
-
-@keyframes cell-pulse {
-  to {
-    opacity: 0.06;
-  }
-}
-
-.featured__spark {
-  stroke: var(--accent);
-  stroke-width: 2;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  filter: drop-shadow(0 0 6px rgba(255, 145, 0, 0.45));
-}
-
-.featured__axis text {
-  fill: var(--subtle);
-  font-family: var(--font-mono);
-  font-size: 10px;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: top;
 }
 
 .featured__visual-note {
@@ -1131,6 +1129,42 @@ h3 {
 
 .project-card:hover::before {
   opacity: 1;
+}
+
+/* Print real do projeto, encostado nas bordas do card. */
+.project-card__media {
+  position: relative;
+  margin: -1.4rem -1.4rem 1.2rem;
+  overflow: hidden;
+  border-bottom: 1px solid var(--line);
+  background: var(--bg-soft);
+  aspect-ratio: 16 / 10;
+}
+
+.project-card__media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  filter: saturate(0.85) brightness(0.92);
+  transition:
+    transform 500ms var(--ease),
+    filter 300ms var(--ease);
+}
+
+.project-card__media::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0;
+  height: 38%;
+  background: linear-gradient(transparent, rgba(12, 14, 19, 0.55));
+  pointer-events: none;
+}
+
+.project-card:hover .project-card__media img {
+  transform: scale(1.03);
+  filter: none;
 }
 
 .project-card__top {
@@ -1545,6 +1579,11 @@ h3 {
     border-left: 0;
     border-top: 1px solid var(--line);
     min-height: 16rem;
+  }
+
+  /* Empilhado, o print vertical inteiro ficaria alto demais: mostra o topo. */
+  .featured__shot img {
+    aspect-ratio: 4 / 3;
   }
 }
 

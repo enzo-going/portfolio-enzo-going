@@ -12,6 +12,8 @@ export type Project = {
   link?: string;
   linkNote?: string;
   demo?: { href: string; label: string };
+  /** Print real do projeto (em public/projects): 960x600 nos cards, 960x1200 no destaque. */
+  image?: { src: string; alt: string };
   featured?: boolean;
   side?: boolean;
 };
