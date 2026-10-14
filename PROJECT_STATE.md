@@ -1,9 +1,16 @@
 # PROJECT_STATE.md
 
-Última atualização: 2026-08-13
+Última atualização: 2026-10-14
 
 ## Estado atual
 
+- **2026-10-14 — prints reais nos cards**: oito projetos ganharam imagem em
+  `public/projects/*.webp` (960×600 nos cards, 960×1200 no destaque; 264 KB no
+  total, com `loading="lazy"`). Todos são capturas da aplicação real rodando com
+  os dados de demonstração de cada repositório, ou das páginas publicadas no
+  GitHub Pages. O flagship trocou o SVG abstrato pelo resultado oficial do
+  dashboard. Windows Deploy Kit e Network Folder Search não têm interface para
+  mostrar e ficaram sem imagem, juntos na última linha da grade.
 - **2026-08-13 — CorporTV adicionado**: novo card de projeto aplicado, com
   agendamento, resiliência offline, segurança de uploads e testes em CI. Node.js
   e Express também foram incluídos nas competências e na faixa de tecnologias.
@@ -28,7 +35,8 @@
 | Conteúdo centralizado em `src/data/portfolio.ts` | Editar texto sem tocar em componente |
 | Skills por categoria, sem barras de % | Honestidade técnica; barras genéricas não informam nada |
 | Flagship = `international-conflict-risk-ml` | Projeto mais forte: pipeline, validação temporal, dashboard |
-| Visual do flagship é SVG abstrato rotulado | Não fingir screenshot; nota explícita no card |
+| Visual do flagship é print real do dashboard | Antes era SVG abstrato porque não havia print; agora o resultado oficial é publicado |
+| Só print real nos cards | Projeto sem interface fica sem imagem em vez de ganhar uma tela inventada |
 | Identidade preto + laranja `rgb(255,145,0)` | Técnico/F1/data lab sem copiar a referência (verde neon evitado) |
 | Fontes Google (Space Grotesk/Inter/JetBrains Mono) | Personalidade tipográfica com custo de carregamento aceitável |
 
@@ -37,7 +45,7 @@
 - [x] `og:image` com a identidade nova (`public/og-image.png`, 1200×630).
 - [x] Favicon com monograma "EG" (`public/favicon-*.png` + apple-touch-icon).
 - [x] Primeiro screenshot real de projeto publicado no README do CorporTV.
-- [ ] Incorporar screenshots reais nos cards do portfólio quando o componente suportar mídia.
+- [x] Incorporar screenshots reais nos cards do portfólio (campo `image` em `Project`).
 
 ## Próximos passos sugeridos
 
