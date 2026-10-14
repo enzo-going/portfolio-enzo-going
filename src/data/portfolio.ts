@@ -47,6 +47,10 @@ export const profile = {
 export const projects: Project[] = [
   {
     id: "conflict-risk",
+    image: {
+      src: "/projects/conflict-risk.webp",
+      alt: "Resultado oficial no dashboard publicado: Logistic Regression com F1 0,8722 contra 0,8571 da baseline de persistência, e a comparação com Random Forest, Gradient Boosting e MLP",
+    },
     name: "International Conflict Risk ML",
     repo: "international-conflict-risk-ml",
     kindLabel: "Machine Learning · Dados",
@@ -74,6 +78,10 @@ export const projects: Project[] = [
   },
   {
     id: "netpulse",
+    image: {
+      src: "/projects/netpulse.webp",
+      alt: "Painel do NetPulse no modo demo: resumo do parque e linha do tempo com uma queda correlacionada de 6 ativos na mesma sub-rede",
+    },
     name: "NetPulse",
     repo: "netpulse",
     kindLabel: "Backend · Redes",
@@ -92,6 +100,10 @@ export const projects: Project[] = [
   },
   {
     id: "corptv",
+    image: {
+      src: "/projects/corptv.webp",
+      alt: "Visão geral do painel do CorporTV: telas online e offline, link de cada player e a programação no ar, com um conteúdo vencido oculto",
+    },
     name: "CorporTV",
     repo: "corptv",
     kindLabel: "Backend · Digital Signage",
@@ -112,6 +124,10 @@ export const projects: Project[] = [
   },
   {
     id: "ti-chamados",
+    image: {
+      src: "/projects/ti-chamados.webp",
+      alt: "Painel de chamados em aberto do helpdesk, com categoria, prioridade, responsável e tempo aberto, usando dados fictícios",
+    },
     name: "Helpdesk de TI — Chamados via WhatsApp",
     repo: "ti-chamados-whatsapp",
     kindLabel: "Backend · Arquitetura",
@@ -130,6 +146,10 @@ export const projects: Project[] = [
   },
   {
     id: "print-monitor",
+    image: {
+      src: "/projects/print-monitor.webp",
+      alt: "Visão mensal do Print Monitor com a produção do período, a cobertura das impressoras e a última coleta, em dados de demonstração",
+    },
     name: "Print Monitor Local",
     repo: "print-monitor-local",
     kindLabel: "Automação · Redes",
@@ -147,25 +167,11 @@ export const projects: Project[] = [
     link: "https://github.com/enzo-going/print-monitor-local",
   },
   {
-    id: "windows-deploy-kit",
-    name: "Windows Deploy Kit",
-    repo: "windows-deploy-kit",
-    kindLabel: "Automação · Windows",
-    tagline:
-      "Pendrive que prepara e restaura máquinas Windows sem acompanhamento — remove o Microsoft 365 de fábrica, instala Office, apps e antivírus, e entra no domínio.",
-    description:
-      "Preparar um notebook novo consumia mais de uma hora de trabalho manual e falhava de um jeito diferente a cada tentativa. O kit reduz isso a um duplo clique: menu único, etapas que retomam de onde pararam e um modo simulação que mostra tudo o que seria feito antes de mudar qualquer coisa na máquina.",
-    highlights: [
-      "PowerShell 5.1 sem dependências: roda offline numa máquina recém-formatada",
-      "Etapas idempotentes — rodar de novo pula o que já deu certo",
-      "Senha de domínio só em memória: nunca em arquivo, log ou linha de comando",
-      "Restauração com dupla trava, delegando o apagamento ao próprio Windows",
-    ],
-    stack: ["PowerShell", "Windows", "Active Directory", "Automação"],
-    linkNote: "repositório privado",
-  },
-  {
     id: "autobattler",
+    image: {
+      src: "/projects/autobattler.webp",
+      alt: "Partida em andamento no navegador: as duas formações no campo de batalha, as cartas das unidades e o painel de ordens",
+    },
     name: "Tactical Autobattler",
     repo: "tactical-autobattler-python",
     kindLabel: "Software · POO",
@@ -190,6 +196,10 @@ export const projects: Project[] = [
   },
   {
     id: "pdf-document-manager",
+    image: {
+      src: "/projects/pdf-document-manager.webp",
+      alt: "Lista de documentos do PDF Document Manager com título, autor, tipo, tamanho, status de assinatura e ações",
+    },
     name: "PDF Document Manager",
     repo: "pdf-document-manager",
     kindLabel: "Automação · Backend",
@@ -209,6 +219,10 @@ export const projects: Project[] = [
   },
   {
     id: "cesta-basica",
+    image: {
+      src: "/projects/cesta-basica.webp",
+      alt: "Gráfico das horas de trabalho necessárias para comprar a cesta básica de 1995 a 2024 em quatro capitais",
+    },
     name: "Análise — Cesta Básica Brasil",
     repo: "analise-cesta-basica-brasil",
     kindLabel: "Dados · EDA",
@@ -227,6 +241,24 @@ export const projects: Project[] = [
       href: "https://enzo-going.github.io/analise-cesta-basica-brasil/",
       label: "Ver dashboard",
     },
+  },
+  {
+    id: "windows-deploy-kit",
+    name: "Windows Deploy Kit",
+    repo: "windows-deploy-kit",
+    kindLabel: "Automação · Windows",
+    tagline:
+      "Pendrive que prepara e restaura máquinas Windows sem acompanhamento — remove o Microsoft 365 de fábrica, instala Office, apps e antivírus, e entra no domínio.",
+    description:
+      "Preparar um notebook novo consumia mais de uma hora de trabalho manual e falhava de um jeito diferente a cada tentativa. O kit reduz isso a um duplo clique: menu único, etapas que retomam de onde pararam e um modo simulação que mostra tudo o que seria feito antes de mudar qualquer coisa na máquina.",
+    highlights: [
+      "PowerShell 5.1 sem dependências: roda offline numa máquina recém-formatada",
+      "Etapas idempotentes — rodar de novo pula o que já deu certo",
+      "Senha de domínio só em memória: nunca em arquivo, log ou linha de comando",
+      "Restauração com dupla trava, delegando o apagamento ao próprio Windows",
+    ],
+    stack: ["PowerShell", "Windows", "Active Directory", "Automação"],
+    linkNote: "repositório privado",
   },
   {
     id: "network-folder-search",
