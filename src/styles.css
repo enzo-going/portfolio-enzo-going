@@ -17,7 +17,7 @@
 
   --text: #f4f5f8;
   --muted: #9da4b0;
-  --subtle: #686f7c;
+  --subtle: #777f8d; /* contraste >= 4,6:1 em todos os fundos (WCAG AA) */
 
   --accent: rgb(255, 145, 0);
   --accent-dim: rgba(255, 145, 0, 0.55);
